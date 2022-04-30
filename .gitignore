@@ -1,0 +1,20 @@
+#ZIPs
+PrimerTP/PrimerTP.zip
+SegundoTP/SegundoTP.zip
+TDA\ Lista/TDA\ Lista.zip
+TDA\ ABB/TDA\ ABB.zip
+TDA\ Hash/TDA\ Hash.zip
+
+#checkpatch.pl
+PrimerTP/checkpatch.pl
+SegundoTP/checkpatch.pl
+TDA\ Lista/checkpatch.pl
+TDA\ ABB/checkpatch.pl
+TDA\ Hash/checkpatch.pl
+
+#VSCode
+PrimerTP/.vscode/
+SegundoTP/.vscode/
+TDA\ Lista/.vscode/
+TDA\ ABB/.vscode/
+TDA\ Hash/.vscode/

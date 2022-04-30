@@ -5,6 +5,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+bool buscar_c(void *elemento, void *ignorado)
+{
+	return (*(char *)elemento) != 'c';
+}
+
 bool mostrar_elemento(void *elemento, void *contador)
 {
 	if (elemento && contador)
@@ -18,7 +23,7 @@ int elemento_es_d(void *_elemento, void *ignorado)
 {
 	char *elemento = _elemento;
 
-	if(elemento && *elemento == 'd')
+	if (elemento && *elemento == 'd')
 		return 0;
 
 	return -1;
@@ -29,7 +34,7 @@ int elemento_es_igual_a(void *_a, void *_b)
 	char *a = _a;
 	char *b = _b;
 
-	if(a && b && *a == *b)
+	if (a && b && *a == *b)
 		return 0;
 
 	return -1;
@@ -60,7 +65,7 @@ void probar_operaciones_lista()
 	lista_iterador_t *it = NULL;
 
 	for (it = lista_iterador_crear(lista);
-	     lista_iterador_tiene_siguiente(it); lista_iterador_avanzar(it))
+	    lista_iterador_tiene_siguiente(it); lista_iterador_avanzar(it))
 		printf("%c ", *(char *)lista_iterador_elemento_actual(it));
 	printf("\n\n");
 
@@ -77,10 +82,18 @@ void probar_operaciones_lista()
 
 	printf("\n");
 
+	elementos_recorridos = 0;
+	printf("Busco la letra C usando el iterador interno: \n");
+	elementos_recorridos = lista_con_cada_elemento(lista, buscar_c, NULL);
+
+	printf("Recorri %lu elementos con el iterador interno hasta encontrar la letra C\n",
+	       elementos_recorridos);
+
+	printf("\n");
 
 	printf("Busco el elemento con valor 'd' en la lista: ");
 	char *elemento_d = lista_buscar_elemento(lista, elemento_es_d, NULL);
-	if(elemento_d && *elemento_d == 'd')
+	if (elemento_d && *elemento_d == 'd')
 		printf("ENCONTRADO\n");
 	else
 		printf("NO ENCONTRADO D:\n");
@@ -88,7 +101,7 @@ void probar_operaciones_lista()
 	printf("Busco el elemento con valor 'c' en la lista: ");
 	char buscado = 'c';
 	char *elemento_c = lista_buscar_elemento(lista, elemento_es_igual_a, &buscado);
-	if(elemento_c && elemento_c == &c)
+	if (elemento_c && elemento_c == &c)
 		printf("ENCONTRADO\n");
 	else
 		printf("NO ENCONTRADO D:\n");
