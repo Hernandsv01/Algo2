@@ -5,8 +5,6 @@
 #include <stdlib.h>
 #include "pa2mm.h"
 
-/////Pruebas LISTA/////
-// creacion lista
 void CrearUnaLista_CreaListaVacia()
 {
     lista_t *lista = lista_crear();
@@ -19,8 +17,7 @@ void CrearUnaLista_CreaListaVacia()
     lista_destruir(lista);
 }
 
-// insertar elementos
-void dadaUnaListaNula_InsertoElementosAlaLista_ObtengoNull()
+void dada_una_lista_nula_inserto_elementos_a_la_lista_obtengo_null()
 {
     pa2m_afirmar((lista_insertar(NULL, NULL) == NULL), "Insertar un elemento nulo a una lista nula retorna NULL.");
 
@@ -28,7 +25,7 @@ void dadaUnaListaNula_InsertoElementosAlaLista_ObtengoNull()
     pa2m_afirmar((lista_insertar(NULL, elemento) == NULL), "Insertar un elemento a una lista nula retorna NULL.");
 }
 
-void dadaUnaListaVacia_InstertoElementosALaLista_ObtengoListaConElementosAumentados()
+void dada_una_lista_vacia_inserto_elementos_a_la_lista_y_obtengo_lista_con_elementos_aumentados()
 {
     lista_t *lista = lista_crear();
     void *elemento = (void *)1;
@@ -42,14 +39,13 @@ void dadaUnaListaVacia_InstertoElementosALaLista_ObtengoListaConElementosAumenta
     lista_destruir(lista);
 }
 
-// insertar elmentos en posicion
-void dadaUnaListaNulaElementoYPosicion_InsertoElementosALaLista_ObtengoNull()
+void dada_una_lista_nula_elemento_y_posicion_inserto_elementos_a_la_lista_obtengo_null()
 {
     void *elemento = (void *)1;
     pa2m_afirmar((lista_insertar_en_posicion(NULL, elemento, 0) == NULL), "No puedo insertar elmento en una lista nula.");
 }
 
-void dadaUnaListaVaciaUnElementoYPosicion_InsertoElementosEnPosicion_ObtengoListaConElementosAumentados()
+void dada_una_lista_vacia_un_elemento_y_posicion_inserto_elementos_en_posicion_y_obtengo_lista_con_elementos_aumentados()
 {
     lista_t *lista = lista_crear();
     void *elemento = (void *)1;
@@ -61,7 +57,7 @@ void dadaUnaListaVaciaUnElementoYPosicion_InsertoElementosEnPosicion_ObtengoList
     lista_destruir(lista);
 }
 
-void dadaUnaListaVaciaUnElementoYPosicion0_InsertoElementosAlPrincipioDeLaLista()
+void dada_una_lista_vacia_un_elemento_y_posicion_0_inserto_elementos_al_principio_de_la_lista()
 {
     lista_t *lista = lista_crear();
     void *elemento = (void *)1;
@@ -73,7 +69,7 @@ void dadaUnaListaVaciaUnElementoYPosicion0_InsertoElementosAlPrincipioDeLaLista(
     lista_destruir(lista);
 }
 
-void dadaUnaListaVaciaUnElementoYPosicionMayorA1_InsertoElementoEnLaUltimaPosicion()
+void dada_una_lista_vacia_un_elemento_y_posicion_mayor_a_1_inserto_elemento_en_la_ultima_posicion()
 {
     lista_t *lista = lista_crear();
     void *elemento = (void *)1;
@@ -83,7 +79,7 @@ void dadaUnaListaVaciaUnElementoYPosicionMayorA1_InsertoElementoEnLaUltimaPosici
     lista_destruir(lista);
 }
 
-void dadaUnaListaUnElementoYPosicion_InsertoCuatroElementos_ObtengoListaDeNodosEnlazados()
+void dada_una_lista_un_elemento_y_posicion__inserto_cuatro_elementos_y_obtengo_lista_de_nodos_enlazados()
 {
     lista_t *lista = lista_crear();
     void *elemento_uno = (void *)1;
@@ -104,13 +100,12 @@ void dadaUnaListaUnElementoYPosicion_InsertoCuatroElementos_ObtengoListaDeNodosE
     lista_destruir(lista);
 }
 
-// quitar elementos
-void dadaUnaListaNula_QuitarUnElementoDevuelveNULL()
+void dada_una_lista_nula_quitar_un_elemento_devuelve_null()
 {
     pa2m_afirmar(lista_quitar(NULL) == NULL, "Quitar elemento de una lista nula retorna NULL.");
 }
 
-void dadaUnaListaVacia_QuitarUnElementoDevuelveNULL()
+void dada_una_lista_vacia_quitar_un_elemento_devuelve_NULL()
 {
     lista_t *lista = lista_crear();
     pa2m_afirmar(lista_quitar(lista) == NULL, "Quitar un elmento de una lista vacia retorna NULL");
@@ -118,7 +113,7 @@ void dadaUnaListaVacia_QuitarUnElementoDevuelveNULL()
     lista_destruir(lista);
 }
 
-void dadaUnaListaConUnElemento_QuitarElElemento_DevuelveElementoYListaQuedaVacia()
+void dada_una_lista_con_un_elemento_quitar_el_elemento_devuelve_elemento_y_lista_queda_vacia()
 {
     lista_t *lista = lista_crear();
     void *elemento = (void *)1;
@@ -131,7 +126,7 @@ void dadaUnaListaConUnElemento_QuitarElElemento_DevuelveElementoYListaQuedaVacia
     lista_destruir(lista);
 }
 
-void dadaUnaLista_QuitarUnElementoDevuelveElElementoElminado_CantidadNodosDisminuye()
+void dada_una_lista_quitar_un_elemento_devuelve_el_elemento_elminado_cantidad_nodos_disminuye()
 {
     lista_t *lista = lista_crear();
     void *elemento_uno = (void *)1;
@@ -165,13 +160,12 @@ void dadaUnaLista_QuitarUnElementoDevuelveElElementoElminado_CantidadNodosDismin
     lista_destruir(lista);
 }
 
-// quitar elementos en poscion
-void dadaUnaListaNula_QuitarUnElementoEnPosicionX_DevuelveNULL()
+void dada_una_lista_nula_quitar_un_elemento_en_posicion_x_devuelve_null()
 {
     pa2m_afirmar(lista_quitar_de_posicion(NULL, 10) == NULL, "Quitar un elemento de posicion 10 de una lista nula retorna NULL.");
 }
 
-void dadaUnaListaVacia_QuitarUnElementoEnPosicionX_DevuelveNULL()
+void dada_una_lista_vacia_quitar_un_elemento_en_posicion_x_devuelve_null()
 {
     lista_t *lista = lista_crear();
     pa2m_afirmar(lista_quitar_de_posicion(lista, 5) == NULL, "Quitar un elemento de una lista vacia retorna NULL.");
@@ -179,7 +173,7 @@ void dadaUnaListaVacia_QuitarUnElementoEnPosicionX_DevuelveNULL()
     lista_destruir(lista);
 }
 
-void dadaUnaLista_QuitarElemenetosSegunPosicion_DevuelveElElementoQuitado()
+void dada_una_lista_quitar_elementos_segun_posicion_devuelve_el_elemento_quitado()
 {
     lista_t *lista = lista_crear();
     void *elemento_uno = (void *)1;
@@ -203,7 +197,7 @@ void dadaUnaLista_QuitarElemenetosSegunPosicion_DevuelveElElementoQuitado()
     lista_destruir(lista);
 }
 
-void dadaUnaLista_QuitarElementosSegunPosicionMayor_QuitaElUltimoElemento()
+void dada_una_lista_quitar_elementos_segun_posicion_mayor_quita_el_ultimo_elemento()
 {
     lista_t *lista = lista_crear();
     void *elemento_uno = (void *)1;
@@ -224,14 +218,13 @@ void dadaUnaLista_QuitarElementosSegunPosicionMayor_QuitaElUltimoElemento()
     lista_destruir(lista);
 }
 
-// lista elementos posicion
-void dadaUnaListaNulaYPosicion_ObtengoElementoNULL()
+void dada_una_lista_nula_y_posicion_obtengo_elemento_null()
 {
     pa2m_afirmar(lista_elemento_en_posicion(NULL, (size_t)NULL) == NULL, "Buscar el elemento de una posicion nula en una lista nula devuelve NULL.");
     pa2m_afirmar(lista_elemento_en_posicion(NULL, 3) == NULL, "Buscar un elemento en lista nula en una posicion retorna NULL.");
 }
 
-void dadaUnaListaVaciaYposicion_ObtengoElementoNULL()
+void dada_una_lista_vacia_y_posicion_obtengo_elemento_null()
 {
     lista_t *lista = lista_crear();
     pa2m_afirmar(lista_elemento_en_posicion(lista, 2) == NULL, "Buscar el elemento de una posicion en una lista vacia retorna NULL.");
@@ -239,7 +232,7 @@ void dadaUnaListaVaciaYposicion_ObtengoElementoNULL()
     lista_destruir(lista);
 }
 
-void dadaUnaListaConElementosYPosicion_ObtengoElElementoBuscado()
+void dada_una_lista_con_elementos_y_posicion_obtengo_el_elemento_buscado()
 {
     lista_t *lista = lista_crear();
     void *elemento_uno = (void *)1;
@@ -256,7 +249,7 @@ void dadaUnaListaConElementosYPosicion_ObtengoElElementoBuscado()
     lista_destruir(lista);
 }
 
-void dadaUnaListaConElementosYPosicionMayorACantidadDeElementos_ObtengoNULL()
+void dada_una_lista_con_elementos_y_posicion_mayor_a_cantidad_de_elementos_obtengo_null()
 {
     lista_t *lista = lista_crear();
     void *elemento_uno = (void *)1;
@@ -269,13 +262,12 @@ void dadaUnaListaConElementosYPosicionMayorACantidadDeElementos_ObtengoNULL()
     lista_destruir(lista);
 }
 
-// lista primero
-void dadaUnaListaNula_ElPrimerElementoEsNULL()
+void dada_una_lista_nula_el_primer_elemento_es_null()
 {
     pa2m_afirmar(lista_primero(NULL) == NULL, "El primer elemento de una lista nula es NULL.");
 }
 
-void dadaUnaListaVacia_ElPrimerElementoEsNULL()
+void dada_una_lista_vacia_el_primer_elemento_es_null()
 {
     lista_t *lista = lista_crear();
     pa2m_afirmar(lista_primero(lista) == NULL, "El primer elemento de una lista vacia es NULL.");
@@ -283,7 +275,7 @@ void dadaUnaListaVacia_ElPrimerElementoEsNULL()
     lista_destruir(lista);
 }
 
-void dadaUnaLista_ElPrimerElementoEsElCorrespondiente()
+void dada_una_lista_el_primer_elemento_es_el_correspondiente()
 {
     lista_t *lista = lista_crear();
     void *elemento_uno = (void *)1;
@@ -298,13 +290,12 @@ void dadaUnaLista_ElPrimerElementoEsElCorrespondiente()
     lista_destruir(lista);
 }
 
-// lista ultimo
-void dadaUnaListaNula_ElUltimoElementoEsNULL()
+void dada_una_lista_nula_el_ultimo_elemento_es_null()
 {
     pa2m_afirmar(lista_ultimo(NULL) == NULL, "El ultimo elemento de una lista nula es NULL.");
 }
 
-void dadaUnaListaVacia_ElUltimoElementoEsNULL()
+void dada_una_lista_vacia_el_ultimo_elemento_es_null()
 {
     lista_t *lista = lista_crear();
     pa2m_afirmar(lista_ultimo(lista) == NULL, "El ultimo elemento de una lista vacia es NULL.");
@@ -312,7 +303,7 @@ void dadaUnaListaVacia_ElUltimoElementoEsNULL()
     lista_destruir(lista);
 }
 
-void dadaUnaLista_ElUltimorElementoEsElCorrespondiente()
+void dada_una_lista_el_ultimor_elemento_es_el_correspondiente()
 {
     lista_t *lista = lista_crear();
     void *elemento_uno = (void *)1;
@@ -327,20 +318,19 @@ void dadaUnaLista_ElUltimorElementoEsElCorrespondiente()
     lista_destruir(lista);
 }
 
-// lista vacia
-void dadaUnaListaNula_DevuelveTrue_LaListaSeEncuentraVacia()
+void dada_una_lista_nula_devuelve_true_la_lista_se_encuentra_vacia()
 {
     pa2m_afirmar(lista_vacia(NULL) == true, "Una lista nula, es una lista vacia.");
 }
 
-void dadaUnaListaVacia_SeEncuentraVacia()
+void dada_una_lista_vacia_se_encuentra_vacia()
 {
     lista_t *lista = lista_crear();
     pa2m_afirmar(lista_vacia(lista) == true, "Una lista vacia, es esfectivamente una lista vacia.");
     lista_destruir(lista);
 }
 
-void dadaUnaListaConElementos_LaListaNoSeEncuentraVacia()
+void dada_una_lista_con_elementos_la_lista_no_se_encuentra_vacia()
 {
     lista_t *lista = lista_crear();
     void *elemento_uno = (void *)1;
@@ -355,14 +345,13 @@ void dadaUnaListaConElementos_LaListaNoSeEncuentraVacia()
     lista_destruir(lista);
 }
 
-// lista tamanio
 
-void dadaUnaListaNula_elTamanioEscero()
+void dada_una_lista_nula_el_tamanio_es_cero()
 {
     pa2m_afirmar(lista_tamanio(NULL) == 0, "Una lista nula tiene tamanio 0.");
 }
 
-void dadaUnaListaVacia_elTamanioEscero()
+void dada_una_lista_vacia_el_tamanio_es_cero()
 {
     lista_t *lista = lista_crear();
     pa2m_afirmar(lista_tamanio(lista) == 0, "Una lista vacia tiene tamanio 0.");
@@ -370,7 +359,7 @@ void dadaUnaListaVacia_elTamanioEscero()
     lista_destruir(lista);
 }
 
-void dadaUnaListaConElementos_ElTamanioEsLaCantidadDeElementos()
+void dada_una_lista_con_elementos_el_tamanio_es_la_cantidad_de_elementos()
 {
     lista_t *lista = lista_crear();
     void *elemento_uno = (void *)1;
@@ -385,13 +374,12 @@ void dadaUnaListaConElementos_ElTamanioEsLaCantidadDeElementos()
     lista_destruir(lista);
 }
 
-// iterador externo
-void dadaUnaListaNula_cuandoIntentoCrearUnIterador_DevuelveNULL()
+void dada_una_lista_nula_cuando_intento_crear_un_iterador_devuelve_null()
 {
     pa2m_afirmar(lista_iterador_crear(NULL) == NULL, "Cuando intento crear un iterador de una lista nula devuelve NULL.");
 }
 
-void dadaUnaListaVacia_CreoUnIterador()
+void dada_una_lista_vacia_creo_un_iterador()
 {
     lista_t *lista = lista_crear();
     lista_iterador_t *iterador_lista_vacia = lista_iterador_crear(lista);
@@ -406,7 +394,7 @@ void dadaUnaListaVacia_CreoUnIterador()
     lista_destruir(lista);
 }
 
-void dadaUnaListaConElementos_CreoUnIteradorExterno()
+void dada_una_lista_con_elementos_creo_un_iterador_externo()
 {
     lista_t *lista = lista_crear();
     void *elemento_uno = (void *)1;
@@ -432,7 +420,6 @@ void dadaUnaListaConElementos_CreoUnIteradorExterno()
     lista_destruir(lista);
 }
 
-// iterador interno
 bool si_es_cinco_es_false(void *numero, void *contexto)
 {
     if (*(int *)numero == 5)
@@ -451,7 +438,7 @@ bool funcion_iterador_interno_sin_corte(void *numero, void *contexto)
     return true;
 }
 
-void dadaUnaListaConElemento_CreoUnIteradorInterno()
+void dada_una_lista_con_elementos_creo_un_iterador_interno()
 {
     lista_t *lista = lista_crear();
     int elementos[] = {1, 2, 3, 4, 5, 6, 7};
@@ -474,8 +461,7 @@ void dadaUnaListaConElemento_CreoUnIteradorInterno()
     lista_destruir(lista);
 }
 
-/////Pruebas PILA//////
-void crearUnaPila_RetornaUnaPilaVacia()
+void crear_una_pila_retorna_una_pila_vacia()
 {
     pila_t *pila = NULL;
 
@@ -485,7 +471,7 @@ void crearUnaPila_RetornaUnaPilaVacia()
     pila_destruir(pila);
 }
 
-void funcionesPilaNULL()
+void funciones_pila_null()
 {
     void *elemento = (void *)1;
     pa2m_afirmar(pila_apilar(NULL, NULL) == NULL, "Apilar en una pila nula un elemento inexistente, devuelve NULL.");
@@ -495,7 +481,7 @@ void funcionesPilaNULL()
     pa2m_afirmar(pila_tamanio(NULL) == 0, "El tamanio de una pila inexistente es 0.");
 }
 
-void funcionesPila()
+void funciones_pila()
 {
     pila_t *pila = pila_crear();
     void *elemento_uno = (void *)1;
@@ -516,8 +502,7 @@ void funcionesPila()
     pila_destruir(pila);
 }
 
-/////Pruebas COLA/////
-void crearUnaCola_RetornaUnaColaVacia()
+void crear_una_cola_retorna_una_cola_vacia()
 {
     cola_t *cola = NULL;
 
@@ -527,7 +512,7 @@ void crearUnaCola_RetornaUnaColaVacia()
     cola_destruir(cola);
 }
 
-void funcionesColaNULL()
+void funciones_cola_null()
 {
     void *elemento = (void *)1;
     pa2m_afirmar(cola_encolar(NULL, NULL) == NULL, "Encolar en una cola nula un elemento inexistente, devuelve NULL.");
@@ -537,7 +522,7 @@ void funcionesColaNULL()
     pa2m_afirmar(cola_tamanio(NULL) == 0, "El tamanio de una cola inexistente es 0.");
 }
 
-void funcionesCola()
+void funciones_cola()
 {
     cola_t *cola = cola_crear();
     void *elemento_uno = (void *)1;
@@ -560,95 +545,81 @@ void funcionesCola()
 
 int main()
 {
-  /* --------------------------- template de pruebas -------------------------- */
-  /*
-   * pa2m_nuevo_grupo("Titulo del grupo de pruebas");
-   * funcion_con_pruebas_adentro();
-   * La funcion adentro debe tener(){
-   *    //Inicialización
-   *    Se inicializan los elementos que se vayan a usar
-   * 
-   *    //Validación
-   *    pa2m_afirmar(validacion_booleana, "Nombre/Descripción de la prueba")
-   * 
-   *    //Destrucción
-   *    Se destruyen los elementos inicializados
-   * }
-   */
-
-
-    // LISTA
-    pa2m_nuevo_grupo("Pruebas Con Lista NULL");
-    dadaUnaListaNula_InsertoElementosAlaLista_ObtengoNull();
-    dadaUnaListaNulaElementoYPosicion_InsertoElementosALaLista_ObtengoNull();
-    dadaUnaListaNula_QuitarUnElementoDevuelveNULL();
-    dadaUnaListaNula_QuitarUnElementoEnPosicionX_DevuelveNULL();
-    dadaUnaListaNulaYPosicion_ObtengoElementoNULL();
-    dadaUnaListaNula_ElPrimerElementoEsNULL();
-    dadaUnaListaNula_ElUltimoElementoEsNULL();
-    dadaUnaListaNula_DevuelveTrue_LaListaSeEncuentraVacia();
-    dadaUnaListaNula_elTamanioEscero();
-    dadaUnaListaNula_cuandoIntentoCrearUnIterador_DevuelveNULL();
+    pa2m_nuevo_grupo("PRUEBAS LISTA");
 
     pa2m_nuevo_grupo("Crear Lista");
     CrearUnaLista_CreaListaVacia();
 
     pa2m_nuevo_grupo("Insertar Elementos a Lista");
-    dadaUnaListaVacia_InstertoElementosALaLista_ObtengoListaConElementosAumentados();
+    dada_una_lista_vacia_inserto_elementos_a_la_lista_y_obtengo_lista_con_elementos_aumentados();
 
     pa2m_nuevo_grupo("Insertar Elementos en una Posicion a la Lista");
-    dadaUnaListaVaciaUnElementoYPosicion_InsertoElementosEnPosicion_ObtengoListaConElementosAumentados();
-    dadaUnaListaVaciaUnElementoYPosicion0_InsertoElementosAlPrincipioDeLaLista();
-    dadaUnaListaVaciaUnElementoYPosicionMayorA1_InsertoElementoEnLaUltimaPosicion();
-    dadaUnaListaUnElementoYPosicion_InsertoCuatroElementos_ObtengoListaDeNodosEnlazados();
+    dada_una_lista_vacia_un_elemento_y_posicion_inserto_elementos_en_posicion_y_obtengo_lista_con_elementos_aumentados();
+    dada_una_lista_vacia_un_elemento_y_posicion_0_inserto_elementos_al_principio_de_la_lista();
+    dada_una_lista_vacia_un_elemento_y_posicion_mayor_a_1_inserto_elemento_en_la_ultima_posicion();
+    dada_una_lista_un_elemento_y_posicion__inserto_cuatro_elementos_y_obtengo_lista_de_nodos_enlazados();
 
     pa2m_nuevo_grupo("Quitar elementos de la lista");
-    dadaUnaListaVacia_QuitarUnElementoDevuelveNULL();
-    dadaUnaListaConUnElemento_QuitarElElemento_DevuelveElementoYListaQuedaVacia();
-    dadaUnaLista_QuitarUnElementoDevuelveElElementoElminado_CantidadNodosDisminuye();
+    dada_una_lista_vacia_quitar_un_elemento_devuelve_NULL();
+    dada_una_lista_con_un_elemento_quitar_el_elemento_devuelve_elemento_y_lista_queda_vacia();
+    dada_una_lista_quitar_un_elemento_devuelve_el_elemento_elminado_cantidad_nodos_disminuye();
 
     pa2m_nuevo_grupo("Quitar elementos de una posicion de la lista");
-    dadaUnaListaVacia_QuitarUnElementoEnPosicionX_DevuelveNULL();
-    dadaUnaLista_QuitarElemenetosSegunPosicion_DevuelveElElementoQuitado();
-    dadaUnaLista_QuitarElementosSegunPosicionMayor_QuitaElUltimoElemento();
+    dada_una_lista_vacia_quitar_un_elemento_en_posicion_x_devuelve_null();
+    dada_una_lista_quitar_elementos_segun_posicion_devuelve_el_elemento_quitado();
+    dada_una_lista_quitar_elementos_segun_posicion_mayor_quita_el_ultimo_elemento();
 
     pa2m_nuevo_grupo("Consultar elementos en posicion");
-    dadaUnaListaVaciaYposicion_ObtengoElementoNULL();
-    dadaUnaListaConElementosYPosicion_ObtengoElElementoBuscado();
-    dadaUnaListaConElementosYPosicionMayorACantidadDeElementos_ObtengoNULL();
+    dada_una_lista_vacia_y_posicion_obtengo_elemento_null();
+    dada_una_lista_con_elementos_y_posicion_obtengo_el_elemento_buscado();
+    dada_una_lista_con_elementos_y_posicion_mayor_a_cantidad_de_elementos_obtengo_null();
 
     pa2m_nuevo_grupo("Primer elemento de la lista");
-    dadaUnaListaVacia_ElPrimerElementoEsNULL();
-    dadaUnaLista_ElPrimerElementoEsElCorrespondiente();
+    dada_una_lista_vacia_el_primer_elemento_es_null();
+    dada_una_lista_el_primer_elemento_es_el_correspondiente();
 
     pa2m_nuevo_grupo("Ultimo elemento de la lista");
-    dadaUnaListaVacia_ElUltimoElementoEsNULL();
-    dadaUnaLista_ElUltimorElementoEsElCorrespondiente();
+    dada_una_lista_vacia_el_ultimo_elemento_es_null();
+    dada_una_lista_el_ultimor_elemento_es_el_correspondiente();
 
     pa2m_nuevo_grupo("Lista vacia");
-    dadaUnaListaVacia_SeEncuentraVacia();
-    dadaUnaListaConElementos_LaListaNoSeEncuentraVacia();
+    dada_una_lista_vacia_se_encuentra_vacia();
+    dada_una_lista_con_elementos_la_lista_no_se_encuentra_vacia();
 
-    pa2m_nuevo_grupo("Lista tamanio");
-    dadaUnaListaVacia_elTamanioEscero();
-    dadaUnaListaConElementos_ElTamanioEsLaCantidadDeElementos();
+    pa2m_nuevo_grupo("Lista tamaño");
+    dada_una_lista_vacia_el_tamanio_es_cero();
+    dada_una_lista_con_elementos_el_tamanio_es_la_cantidad_de_elementos();
 
     pa2m_nuevo_grupo("Iterador Lista");
-    dadaUnaListaVacia_CreoUnIterador();
-    dadaUnaListaConElementos_CreoUnIteradorExterno();
-    dadaUnaListaConElemento_CreoUnIteradorInterno();
+    dada_una_lista_vacia_creo_un_iterador();
+    dada_una_lista_con_elementos_creo_un_iterador_externo();
+    dada_una_lista_con_elementos_creo_un_iterador_interno();
 
-    // PILA
+    pa2m_nuevo_grupo("Pruebas Con Lista NULL");
+    dada_una_lista_nula_inserto_elementos_a_la_lista_obtengo_null();
+    dada_una_lista_nula_elemento_y_posicion_inserto_elementos_a_la_lista_obtengo_null();
+    dada_una_lista_nula_quitar_un_elemento_devuelve_null();
+    dada_una_lista_nula_quitar_un_elemento_en_posicion_x_devuelve_null();
+    dada_una_lista_nula_y_posicion_obtengo_elemento_null();
+    dada_una_lista_nula_el_primer_elemento_es_null();
+    dada_una_lista_nula_el_ultimo_elemento_es_null();
+    dada_una_lista_nula_devuelve_true_la_lista_se_encuentra_vacia();
+    dada_una_lista_nula_el_tamanio_es_cero();
+    dada_una_lista_nula_cuando_intento_crear_un_iterador_devuelve_null();
+
+    pa2m_nuevo_grupo("PRUEBAS PILA");
+    
     pa2m_nuevo_grupo("Crear Pila");
-    crearUnaPila_RetornaUnaPilaVacia();
-    funcionesPilaNULL();
-    funcionesPila();
+    crear_una_pila_retorna_una_pila_vacia();
+    funciones_pila_null();
+    funciones_pila();
 
-    // COLA
+    pa2m_nuevo_grupo("PRUEBAS COLA");
+    
     pa2m_nuevo_grupo("Crear Cola");
-    crearUnaCola_RetornaUnaColaVacia();
-    funcionesColaNULL();
-    funcionesCola();
+    crear_una_cola_retorna_una_cola_vacia();
+    funciones_cola_null();
+    funciones_cola();
 
     return pa2m_mostrar_reporte();
 }

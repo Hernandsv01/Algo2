@@ -14,7 +14,6 @@ cola_t* cola_crear(){
 }
 
 cola_t* cola_encolar(cola_t* cola, void* elemento){
-    if(!cola) return NULL;
     return (cola_t*)lista_insertar((lista_t*)cola, elemento);
 }
 

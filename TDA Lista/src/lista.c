@@ -28,7 +28,7 @@ lista_t *lista_insertar(lista_t *lista, void *elemento)
     if (!lista) {
         return NULL;
     }
-    nodo_t* nodo_nuevo = malloc(sizeof(nodo_t));
+    nodo_t* nodo_nuevo = calloc(1, sizeof(nodo_t));
     if (!nodo_nuevo) {
         return NULL;
     }
@@ -213,7 +213,7 @@ lista_iterador_t *lista_iterador_crear(lista_t *lista)
     if (!lista) {
         return NULL;
     }
-    lista_iterador_t *iterador = malloc(sizeof(lista_iterador_t));
+    lista_iterador_t *iterador = calloc(1, sizeof(lista_iterador_t));
     if (!iterador) {
         return NULL;
     }

@@ -30,9 +30,9 @@ size_t pila_tamanio(pila_t* pila){
 }
 
 bool pila_vacia(pila_t* pila){
-    return lista_vacia((lista_t*)pila);;
+    return lista_vacia((lista_t*)pila);
 }
 
 void pila_destruir(pila_t* pila){
-    lista_destruir((lista_t*)pila);;
+    lista_destruir((lista_t*)pila);
 }
