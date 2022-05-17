@@ -92,7 +92,7 @@ int main()
 
 	auxiliar->clave = 5;
 	printf("Busco el elemento 5: %s\n",
-	       abb_buscar(arbol, auxiliar) == c5 ? "OK" : "ERROR");
+	       abb_buscar(arbol, c5) == c5 ? "OK" : "ERROR");
 
 	auxiliar->clave = 7;
 	printf("Quito nodo hoja (7): %s\n",
